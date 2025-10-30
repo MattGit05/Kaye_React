@@ -1,0 +1,125 @@
+/* General Page Style */
+.landing-container {
+  min-height: 100vh;
+  background: linear-gradient(90deg, #758c2f, #53632b);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  padding: 50px 20px;
+  width: 1200px;
+}
+
+/* Hero Section */
+.landing-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.landing-button {
+  background: #fff;
+  color: #7209b7;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.landing-button:hover {
+  transform: scale(1.05);
+  background: #f3f3f3;
+}
+
+/* Cards Section */
+.cards-section {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.cards-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 25px 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #f0f0f0;
+  line-height: 1.5;
+}
+
+/* Background Overlay */
+.landing-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .landing-title {
+    font-size: 2.3rem;
+  }
+
+  .cards-title {
+    font-size: 1.6rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+}
