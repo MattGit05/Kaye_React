@@ -292,6 +292,7 @@ body {
   padding: 10px;
   text-align: center;
   font-size: 0.9rem;
+  background-color: white;
 }
 
 .summary-table th {
@@ -309,6 +310,7 @@ body {
 .summary-total {
   text-align: right;
   font-size: 1rem;
+  color: white;
 }
 
 .summary-total p {
@@ -370,4 +372,35 @@ body {
   color: #b7c4df;
   border-top: 2px solid #e0e3eb;
   padding-top: 15px;
+}
+
+
+.carousel-modal .carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-modal .carousel-item {
+  width: 300px; /* smaller width */
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+}
+
+.carousel-btn {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 0 10px;
+}
+
+.carousel-btn:hover {
+  color: #000;
 }
