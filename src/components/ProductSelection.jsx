@@ -104,81 +104,67 @@ const ProductSelection = ({ onNext }) => {
         </button>
       </div>
 
-      {/* Add-ons Modal */}
-      {activeModal === "addons" && (
-        <div className="summary-modal">
-          <div className="modal-content carousel-modal">
-            <h2>Add-ons</h2>
+     {/* Add-ons Modal */}
+{activeModal === "addons" && (
+  <div className="summary-modal">
+    <div className="modal-content grid-modal">
+      <h2>Add-ons</h2>
 
-            <div className="carousel-container">
-              <button className="carousel-btn left" onClick={() => prevItem(addOns, currentAddonIndex, setCurrentAddonIndex)}>
-                &lt;
-              </button>
+      <div className="grid-items">
+        {addOns.map((addon) => (
+          <div className="grid-card" key={addon.id}>
+            <img src={addon.img} alt={addon.name} />
+            <h4>{addon.name}</h4>
+            <p className="price">₱{addon.price}</p>
 
-              <div className="carousel-item">
-                <img src={addOns[currentAddonIndex].img} alt={addOns[currentAddonIndex].name} />
-                <div className="modal-details">
-                  <h4>{addOns[currentAddonIndex].name}</h4>
-                  <p>₱{addOns[currentAddonIndex].price}</p>
-                  <div className="modal-qty-controls">
-                    <button onClick={() => handleDecrement(addOns[currentAddonIndex].id, setAddonsQty)}>-</button>
-                    <span>{addonsQty[addOns[currentAddonIndex].id] || 0}</span>
-                    <button onClick={() => handleIncrement(addOns[currentAddonIndex].id, setAddonsQty)}>+</button>
-                  </div>
-                </div>
-              </div>
-
-              <button className="carousel-btn right" onClick={() => nextItem(addOns, currentAddonIndex, setCurrentAddonIndex)}>
-                &gt;
-              </button>
+            <div className="modal-qty-controls">
+              <button onClick={() => handleDecrement(addon.id, setAddonsQty)}>-</button>
+              <span>{addonsQty[addon.id] || 0}</span>
+              <button onClick={() => handleIncrement(addon.id, setAddonsQty)}>+</button>
             </div>
-
-            <div className="modal-total">
-              <h3>Total Add-ons Cost: ₱{totalAddOns.toLocaleString()}</h3>
-            </div>
-
-            <button onClick={() => setActiveModal(null)}>Close</button>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+
+      <div className="modal-total">
+        <h3>Total Add-ons Cost: ₱{totalAddOns.toLocaleString()}</h3>
+      </div>
+
+      <button onClick={() => setActiveModal(null)} className="close-btn">Close</button>
+    </div>
+  </div>
+)}
 
       {/* Meals Modal */}
-      {activeModal === "meals" && (
-        <div className="summary-modal">
-          <div className="modal-content carousel-modal">
-            <h2>Meals</h2>
+{activeModal === "meals" && (
+  <div className="summary-modal">
+    <div className="modal-content grid-modal">
+      <h2>Meals</h2>
 
-            <div className="carousel-container">
-              <button className="carousel-btn left" onClick={() => prevItem(meals, currentMealIndex, setCurrentMealIndex)}>
-                &lt;
-              </button>
+      <div className="grid-items">
+        {meals.map((meal) => (
+          <div className="grid-card" key={meal.id}>
+            <img src={meal.img} alt={meal.name} />
+            <h4>{meal.name}</h4>
+            <p className="price">₱{meal.price}</p>
 
-              <div className="carousel-item">
-                <img src={meals[currentMealIndex].img} alt={meals[currentMealIndex].name} />
-                <div className="modal-details">
-                  <h4>{meals[currentMealIndex].name}</h4>
-                  <p>₱{meals[currentMealIndex].price}</p>
-                  <div className="modal-qty-controls">
-                    <button onClick={() => handleDecrement(meals[currentMealIndex].id, setMealsQty)}>-</button>
-                    <span>{mealsQty[meals[currentMealIndex].id] || 0}</span>
-                    <button onClick={() => handleIncrement(meals[currentMealIndex].id, setMealsQty)}>+</button>
-                  </div>
-                </div>
-              </div>
-
-              <button className="carousel-btn right" onClick={() => nextItem(meals, currentMealIndex, setCurrentMealIndex)}>
-                &gt;
-              </button>
+            <div className="modal-qty-controls">
+              <button onClick={() => handleDecrement(meal.id, setMealsQty)}>-</button>
+              <span>{mealsQty[meal.id] || 0}</span>
+              <button onClick={() => handleIncrement(meal.id, setMealsQty)}>+</button>
             </div>
-
-            <div className="modal-total">
-              <h3>Total Meals Cost: ₱{totalMeals.toLocaleString()}</h3>
-            </div>
-
-            <button onClick={() => setActiveModal(null)}>Close</button>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+
+      <div className="modal-total">
+        <h3>Total Meals Cost: ₱{totalMeals.toLocaleString()}</h3>
+      </div>
+
+      <button onClick={() => setActiveModal(null)} className="close-btn">Close</button>
+    </div>
+  </div>
+)}
 
       {/* Details Modal stays the same */}
       {activeModal === "details" && (

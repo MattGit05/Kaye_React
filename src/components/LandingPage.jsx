@@ -7,54 +7,50 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
-      {/* Hero Section */}
-      <div className="landing-hero">
-        <div className="landing-content">
-          <h1 className="landing-title">Conference Expense Planner</h1>
-          <p className="landing-subtitle">
-            Plan your next conference effortlessly — select rooms, meals, and add-ons
-            to get an instant, accurate cost summary.
+
+      {/* HERO SECTION */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">Welcome to the Dreamy Event Planner ✨</h1>
+          <p className="hero-subtitle">
+            Create magical conferences with beautiful venues, curated meals, and a
+            fully guided budgeting experience.
           </p>
-          <button className="landing-button" onClick={() => navigate("/planner")}>
-            Get Started
-          </button>
+          <button className="hero-btn" onClick={() => navigate("/planner")}>Start Planning</button>
         </div>
-      </div>
+      </section>
 
-      {/* Three Cards Section */}
-      <section className="cards-section">
-        <h2 className="cards-title">What You Can Do Inside</h2>
-        <div className="cards-container">
-          <div className="card">
-            <div className="card-icon">🏢</div>
-            <h3>Venue Selection</h3>
-            <p>
-              Choose from multiple rooms and halls based on capacity and event type. 
-              Easily match your venue to your needs.
-            </p>
+      {/* FEATURES SECTION */}
+      <section className="features-section">
+        <h2 className="section-title">Plan With Style 💖</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">🎀</div>
+            <h3>Chic Venues</h3>
+            <p>Discover aesthetic and modern conference rooms tailored for every occasion.</p>
           </div>
 
-          <div className="card">
-            <div className="card-icon">🍽️</div>
-            <h3>Meals & Catering</h3>
-            <p>
-              Plan buffet meals, snack packs, or beverage options for your guests, 
-              making catering easy and customizable.
-            </p>
+          <div className="feature-card">
+            <div className="feature-icon">🧁</div>
+            <h3>Lovely Catering</h3>
+            <p>Pick delightful meals, snacks, and drinks that add charm to your event.</p>
           </div>
 
-          <div className="card">
-            <div className="card-icon">💰</div>
-            <h3>Expense Summary</h3>
-            <p>
-              Get a clear, instant breakdown of all costs including rooms, meals, 
-              and add-ons. Keep your budget under control effortlessly.
-            </p>
+          <div className="feature-card">
+            <div className="feature-icon">✨</div>
+            <h3>Clear Expenses</h3>
+            <p>Instant breakdowns that keep your budget cute, clean, and stress-free.</p>
           </div>
         </div>
       </section>
 
-      <div className="landing-bg-overlay"></div>
+      {/* CTA SECTION */}
+      <section className="cta-section">
+        <h2>Your Perfect Conference Awaits 💗</h2>
+        <p>Let us guide you through crafting an event that's beautiful inside and out.</p>
+        <button className="cta-btn" onClick={() => navigate("/planner")}>Begin Your Journey</button>
+      </section>
+
     </div>
   );
 };
