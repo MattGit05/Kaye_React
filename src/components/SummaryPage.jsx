@@ -105,7 +105,7 @@ const SummaryPage = () => {
           Back to Planner
         </button>
 
-        <button className="confirm-btn">
+        <button onClick={() => navigate("/planner")} className="back-btn">
           Confirm Booking
         </button>
       </div>
