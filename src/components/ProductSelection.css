@@ -1,30 +1,29 @@
-
-/* ------------------ GLOBAL CONTAINER ------------------ */
+/* ================= GLOBAL CONTAINER ================= */
 .planner-container {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #ffe6f2, #fff0fa, #fff9fd);
+  background: linear-gradient(180deg, #f4f6fb, #eef1f7);
   min-height: 100vh;
-  color: #6a2b55;
+  color: #2c3e50;
   padding-bottom: 40px;
   width: 1200px;
+  margin: auto;
 }
 
-/* ------------------ NAVBAR ------------------ */
+/* ================= NAVBAR ================= */
 .planner-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffb8d9;
+  background: #1e293b;
   padding: 15px 25px;
-  border-bottom: 3px solid #ff9acb;
-  box-shadow: 0 4px 10px rgba(255, 130, 170, 0.2);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
 .planner-navbar .logo {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #d63384;
-  text-shadow: 0 1px 2px rgba(255, 100, 150, 0.3);
+  color: #ffffff;
 }
 
 .planner-navbar ul {
@@ -36,157 +35,152 @@
 
 .planner-navbar ul li {
   cursor: pointer;
-  font-weight: 600;
-  color: #6a2b55;
+  font-weight: 500;
+  color: #cbd5e1;
   transition: 0.2s;
 }
 
 .planner-navbar ul li:hover {
-  color: #d63384;
-  transform: scale(1.05);
+  color: #ffffff;
 }
 
+/* BUTTON */
 .details-btn {
-  background: #ff85c2;
+  background: #3b82f6;
   color: white;
   border: none;
   padding: 10px 22px;
-  border-radius: 25px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s;
   font-weight: 600;
 }
 
 .details-btn:hover {
-  background: #ff5ca8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  background: #2563eb;
 }
 
-/* ------------------ TITLE ------------------ */
+/* ================= TITLE ================= */
 .planner-title {
   text-align: center;
-  margin-top: 35px;
+  margin-top: 40px;
   font-size: 2rem;
   font-weight: 700;
-  color: #d63384;
-  text-shadow: 0 2px 4px rgba(255, 120, 170, 0.3);
+  color: #1e293b;
 }
 
-/* ------------------ ROOM GRID ------------------ */
+/* ================= ROOM GRID ================= */
 .room-container {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  width: 100%;
 }
 
 .room-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
+  gap: 35px;
+  justify-content: center;
 }
 
+/* ================= ROOM CARD ================= */
 .room-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 2px solid #ffd6ea;
-  box-shadow: 0 6px 20px rgba(255, 140, 180, 0.2);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   transition: 0.3s ease;
 }
 
 .room-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 25px rgba(255, 140, 180, 0.3);
-  border-color: #ffb6db;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 .room-card img {
   width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: cover;
 }
 
 .room-content {
-  padding: 15px;
+  padding: 18px;
   text-align: center;
 }
 
 .room-content h3 {
-  color: #d63384;
+  color: #111827;
   font-weight: 600;
 }
 
 .room-content .price {
-  color: #ff4fa1;
+  color: #2563eb;
   font-weight: 700;
 }
 
+/* QTY BUTTONS */
 .quantity-controls {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .quantity-controls button {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border: none;
-  background: #ff85c2;
+  background: #3b82f6;
   color: white;
   border-radius: 50%;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .quantity-controls button:hover {
-  background: #ff5ca8;
+  background: #2563eb;
 }
 
 .quantity-controls span {
   font-weight: 600;
 }
 
-/* ------------------ TOTAL SECTION ------------------ */
+/* ================= TOTAL SECTION ================= */
 .total-section {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .total-section h3 {
-  font-size: 1.5rem;
-  color: #d63384;
+  font-size: 1.6rem;
+  color: #111827;
   margin-bottom: 15px;
 }
 
 .next-btn {
-  background: #ff6fb8;
+  background: #10b981;
   border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
+  padding: 12px 32px;
+  border-radius: 8px;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .next-btn:hover {
-  background: #ff4fa1;
-  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+  background: #059669;
 }
 
-/* ------------------ MODALS ------------------ */
+/* ================= MODALS ================= */
 .summary-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 180, 220, 0.45);
-  backdrop-filter: blur(5px);
+  background: rgba(15,23,42,0.55);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,116 +190,52 @@
 .modal-content {
   background: white;
   padding: 25px;
-  border-radius: 22px;
+  border-radius: 14px;
   width: 90%;
-  max-width: 500px;
-  max-height: 80vh;
+  max-width: 600px;
+  max-height: 85vh;
   overflow-y: auto;
-  border: 2px solid #ffd6ea;
-  box-shadow: 0 8px 20px rgba(255, 130, 170, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .modal-content h2 {
   text-align: center;
-  color: #d63384;
+  color: #111827;
 }
 
-.modal-content button {
-  background: #ff85c2;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 25px;
-  margin-top: 15px;
-  border: none;
-  cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.modal-content button:hover {
-  background: #ff5ca8;
-}
-
-/* ------------------ SMALL TABLE ------------------ */
-.summary-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.summary-table th {
-  background: #ffd6ea;
-  padding: 10px;
-  font-weight: 600;
-  color: #6a2b55;
-}
-
-.summary-table td {
-  padding: 10px;
-  border-bottom: 1px solid #ffe3f2;
-  color: #7a3c63;
-}
-
-.summary-total {
-  text-align: center;
-  margin-top: 20px;
-}
-
-
-
-.close-btn {
-  background: #ff6fb8 !important;
-}
-
-/* GRID MODAL BASE */
+/* ================= GRID MODAL ================= */
 .grid-modal {
-  width: 80%;
-  max-width: 900px;
-  background: #ffffff;
-  padding: 20px 25px;
-  border-radius: 18px;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 85%;
+  max-width: 950px;
+  padding: 25px;
+  border-radius: 14px;
 }
 
-.grid-modal h2 {
-  margin-bottom: 20px;
-  font-size: 26px;
-  font-weight: 700;
-  color: #333;
-}
-
-/* GRID WRAPPER */
 .grid-items {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
-/* CARD DESIGN */
 .grid-card {
-  background: #f8f9fc;
-  border-radius: 16px;
+  background: #f9fafb;
+  border-radius: 14px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: 0.25s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  transition: 0.25s;
 }
 
 .grid-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 .grid-card img {
   width: 100%;
   height: 140px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .grid-card h4 {
@@ -315,17 +245,14 @@
 }
 
 .grid-card .price {
-  font-size: 16px;
-  color: #4a4a4a;
-  font-weight: 500;
-  margin: 6px 0;
+  color: #2563eb;
+  font-weight: 600;
 }
 
-/* QTY BUTTONS */
+/* QTY MODAL */
 .modal-qty-controls {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 10px;
 }
 
@@ -334,23 +261,16 @@
   height: 34px;
   border-radius: 50%;
   border: none;
-  background: #4b6bfb;
+  background: #3b82f6;
   color: white;
-  font-size: 18px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .modal-qty-controls button:hover {
-  background: #3650d4;
+  background: #2563eb;
 }
 
-.modal-qty-controls span {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* TOTAL INSIDE MODAL */
+/* TOTAL MODAL */
 .modal-total {
   margin-top: 25px;
   text-align: center;
@@ -358,18 +278,40 @@
   font-weight: 700;
 }
 
+/* CLOSE BUTTON */
 .close-btn {
   margin-top: 20px;
-  padding: 10px 20px;
-  background: #ff4e4e;
+  padding: 10px 22px;
+  background: #ef4444;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .close-btn:hover {
-  background: #d63a3a;
+  background: #dc2626;
 }
 
+/* ================= TABLE ================= */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.summary-table th {
+  background: #f1f5f9;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.summary-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.summary-total {
+  text-align: center;
+  margin-top: 20px;
+}

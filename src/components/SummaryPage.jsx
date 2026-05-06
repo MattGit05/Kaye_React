@@ -1,23 +1,115 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./SummaryPage.css";
 
-const SummaryPage = ({ data }) => {
-  if (!data) return <div className="text-center p-10">No data found.</div>;
+const SummaryPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const data = location.state;
+
+  if (!data) {
+    return (
+      <div className="summary-empty">
+        <h2>No booking data found</h2>
+        <button onClick={() => navigate("/planner")}>
+          Go Back
+        </button>
+      </div>
+    );
+  }
+
+  const { quantities, addonsQty, mealsQty, total, totalCapacity } = data;
 
   return (
-    <div className="p-10 bg-gray-100 min-h-screen text-center">
-      <h2 className="text-3xl font-bold mb-6">Expense Summary</h2>
+    <div className="summary-container">
 
-      <div className="max-w-lg mx-auto bg-white shadow-md rounded-2xl p-6">
-        <p><strong>Room:</strong> {data.selectedRoom?.name} - ₱{data.selectedRoom?.price}</p>
-        <p><strong>Meal:</strong> {data.selectedMeal?.name} - ₱{data.selectedMeal?.price}</p>
-        <p><strong>Add-ons:</strong></p>
-        <ul className="list-disc list-inside mb-4">
-          {data.selectedAddons.map((a) => (
-            <li key={a.id}>{a.name} - ₱{a.price}</li>
-          ))}
-        </ul>
-        <h3 className="text-2xl font-bold mt-4">Total: ₱{data.total}</h3>
+      <h1 className="summary-title">Booking Summary</h1>
+
+      {/* TOP STATS */}
+      <div className="summary-stats">
+        <div className="stat-card">
+          <h3>Total Capacity</h3>
+          <p>{totalCapacity}</p>
+        </div>
+
+        <div className="stat-card highlight">
+          <h3>Total Price</h3>
+          <p>₱{total.toLocaleString()}</p>
+        </div>
       </div>
+
+      {/* ROOMS */}
+      <div className="summary-section">
+        <h2>Selected Rooms</h2>
+
+        {Object.keys(quantities).length === 0 ? (
+          <p className="empty-text">No rooms selected</p>
+        ) : (
+          <div className="summary-list">
+            {Object.entries(quantities).map(([id, qty]) => (
+              qty > 0 && (
+                <div key={id} className="summary-item">
+                  <span>Room ID: {id}</span>
+                  <span>Qty: {qty}</span>
+                </div>
+              )
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* ADD-ONS */}
+      <div className="summary-section">
+        <h2>Add-ons</h2>
+
+        {Object.keys(addonsQty).length === 0 ? (
+          <p className="empty-text">No add-ons selected</p>
+        ) : (
+          <div className="summary-list">
+            {Object.entries(addonsQty).map(([id, qty]) => (
+              qty > 0 && (
+                <div key={id} className="summary-item">
+                  <span>Item ID: {id}</span>
+                  <span>Qty: {qty}</span>
+                </div>
+              )
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* MEALS */}
+      <div className="summary-section">
+        <h2>Meals</h2>
+
+        {Object.keys(mealsQty).length === 0 ? (
+          <p className="empty-text">No meals selected</p>
+        ) : (
+          <div className="summary-list">
+            {Object.entries(mealsQty).map(([id, qty]) => (
+              qty > 0 && (
+                <div key={id} className="summary-item">
+                  <span>Meal ID: {id}</span>
+                  <span>Qty: {qty}</span>
+                </div>
+              )
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* BUTTONS */}
+      <div className="summary-buttons">
+        <button onClick={() => navigate("/planner")} className="back-btn">
+          Back to Planner
+        </button>
+
+        <button className="confirm-btn">
+          Confirm Booking
+        </button>
+      </div>
+
     </div>
   );
 };
