@@ -49,20 +49,22 @@ const ProductSelection = ({ onNext }) => {
 
   /* ================= CONTROLS ================= */
 
-  const handleIncrement = (id, setFunc, type = "normal") => {
-    setFunc(prev => {
+const handleIncrement = (id, setFunc, type = "normal") => {
+  setFunc(prev => {
 
-      const currentQty = prev[id] || 0;
+    const currentQty = prev[id] || 0;
 
-      // ✅ limit meals based on TOTAL capacity
-      if (type === "meal") {
-        if (totalCapacity === 0) return prev;
-        if (totalMealsSelected >= totalCapacity) return prev;
-      }
+    // ✅ limit EACH meal item individually
+    if (type === "meal") {
+      if (totalCapacity === 0) return prev;
 
-      return { ...prev, [id]: currentQty + 1 };
-    });
-  };
+      // stop only this specific meal item
+      if (currentQty >= totalCapacity) return prev;
+    }
+
+    return { ...prev, [id]: currentQty + 1 };
+  });
+};
 
   const handleDecrement = (id, setFunc) => {
     setFunc(prev => ({
@@ -197,7 +199,7 @@ const ProductSelection = ({ onNext }) => {
             </p>
 
             <p>
-              Selected Meals: <strong>{totalMealsSelected}</strong>
+              Selected Meals,Snacks and Beverages: <strong>{totalMealsSelected}</strong>
             </p>
 
             <div className="grid-items">
